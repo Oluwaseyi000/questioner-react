@@ -1,13 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./css/sample.css";
-import testImage from "./images/rose-blue-flower-rose-blooms-67636(1).jpeg";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-const App = () => (
-  <div>
-    hello seyi dwebpakc
-    <img src={testImage} alt="" />
-  </div>
+import App from './App';
+import store from './state/store';
+
+const app = (
+  <Provider store={store}>
+    <Router>
+      {' '}
+      <App />{' '}
+    </Router>
+  </Provider>
 );
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(app, document.getElementById('root'));
