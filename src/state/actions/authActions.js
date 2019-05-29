@@ -1,6 +1,11 @@
 import { Axios } from '../../utils/axios';
 
-import { SIGN_IN, DISPATCH_ERROR } from './actionTypes';
+import {
+  SIGN_IN,
+  SIGN_IN_SUCCESS,
+  SIGN_IN_FAILURE,
+  DISPATCH_ERROR,
+} from './actionTypes';
 
 export const getPosts = () => async (dispatch) => {
   try {
@@ -14,5 +19,27 @@ export const getPosts = () => async (dispatch) => {
       type: DISPATCH_ERROR,
       payload: 'error occur',
     });
+  }
+};
+
+const loginSuccess = (payload) => ({
+  type: SIGN_IN_SUCCESS,
+  payload,
+});
+
+const loginFailure = (error) => ({
+  type: SIGN_IN_FAILURE,
+  error,
+});
+
+export const LoginAction = (formData, redirect) => async (dispatch) => {
+  try {
+    const loginData = await Axios.post('/auth/login', formData);
+    dispatch(loginSuccess(loginData.data.data[0]));
+    localStorage.setItem('token', loginData.data.data[0].token);
+    Axios.defaults.headers.common.Authorization = loginData.data.data[0].token;
+    redirect.push('/');
+  } catch (error) {
+    dispatch(loginFailure(error.response.data.error));
   }
 };
