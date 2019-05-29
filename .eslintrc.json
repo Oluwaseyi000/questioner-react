@@ -37,6 +37,10 @@
     "no-underscore-dangle": 0,
     "import/imports-first": ["error", "absolute-first"],
     "import/newline-after-import": "error",
-    "eol-last": ["error", "always"]
+    "eol-last": ["error", "always"],
+    "react/prefer-stateless-function": 0,
+    "import/prefer-default-export": 0,
+    "quotes": 2,
+    "react/destructuring-assignment": 0
   }
 }
