@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export const Axios = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com/posts',
+  baseURL: 'https://seyiproject.herokuapp.com/api/v1',
 });
