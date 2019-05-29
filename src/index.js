@@ -9,8 +9,7 @@ import store from './state/store';
 const app = (
   <Provider store={store}>
     <Router>
-      {' '}
-      <App />{' '}
+      <App />
     </Router>
   </Provider>
 );
