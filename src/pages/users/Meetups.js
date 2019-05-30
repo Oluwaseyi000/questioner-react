@@ -21,6 +21,8 @@ class Meetups extends Component {
   };
 
   render() {
+    const { meetups } = this.state;
+
     return (
       <section className="container">
         <div className="body-wrapper">
@@ -28,7 +30,7 @@ class Meetups extends Component {
           <div className="container-page">
             <div className="topic-list-header">MEETUPS</div>
             <div className="themeetup-list" id="meetup-lists">
-              {this.state.meetups.map((meetup) => (
+              {meetups.map((meetup) => (
                 <div className="single-meetup" key={meetup.id}>
                   <div>
                     <img
@@ -39,12 +41,10 @@ class Meetups extends Component {
                   </div>
                   <div className="list-detailss">
                     <div>
-                      {' '}
                       <Link
                         to={`/meetups/${meetup.id}`}
                         className="question-header"
                       >
-                        {' '}
                         {meetup.topic}
                       </Link>
                     </div>
@@ -52,24 +52,25 @@ class Meetups extends Component {
                     <p>
                       <span className="bold">
                         <i className="far fa-calendar" /> Date:
-                      </span>{' '}
-                      <span className="brown">{meetup.happeningon}</span>{' '}
+                      </span>
+                      <span className="brown">
+                        {' '}
+                        {new Date(meetup.happeningon).toDateString()}
+                      </span>
                     </p>
                     <p>
                       <span className="bold">
-                        {' '}
                         <i className="fa fa-map-marker-alt" /> Location:
                       </span>
-                      <span className="brown">{meetup.location}</span>{' '}
+                      <span className="brown">{meetup.location}</span>
                     </p>
                     <div>
                       <span className="bold">
-                        {' '}
                         <i className="fa fa-question-circle" /> Question:
-                      </span>{' '}
-                      {meetup.qcount} <span className="brown" />{' '}
+                      </span>
+                      {meetup.qcount} <span className="brown" />
                       <span className="bold">
-                        <br /> <i className="fa fa-check" /> RSVPS:{' '}
+                        <br /> <i className="fa fa-check" /> RSVPS:
                       </span>
                       <span className="brown"> {meetup.rsvpcount}</span>
                     </div>

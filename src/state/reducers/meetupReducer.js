@@ -1,4 +1,4 @@
-import { GET_MEETUPS, ERROR } from '../actions/actionTypes';
+import { GET_MEETUPS, GET_MEETUP, ERROR } from '../actions/actionTypes';
 
 const initialState = {
   meetups: [],
@@ -12,6 +12,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         meetups: action.payload,
+      };
+    case GET_MEETUP:
+      return {
+        ...state,
+        meetup: action.payload,
       };
     case ERROR:
       return {
