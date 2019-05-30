@@ -1,10 +1,10 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    path: `${__dirname  }/dist`,
-    publicPath: "/"
+    path: `${__dirname}/dist`,
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -12,31 +12,31 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader"
-          }
-        ]
+            loader: 'html-loader',
+          },
+        ],
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(gif|png|jpg|jpeg|svg)$/i,
-        use: ["file-loader"]
-      }
-    ]
+        test: /\.(gif|png|jpg|jpeg|svg|woff|woff2|eot|ttf)$/i,
+        use: ['file-loader'],
+      },
+    ],
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
-    })
-  ]
+      template: './src/index.html',
+      filename: './index.html',
+    }),
+  ],
 };

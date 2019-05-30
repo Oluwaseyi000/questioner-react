@@ -27,10 +27,6 @@ class Home extends Component {
             </div>
           </div>
         </div>
-
-        <footer className="footer">
-          copyright @ Adebajo Oluwaseyi | Andela 2018
-        </footer>
       </div>
     );
   }

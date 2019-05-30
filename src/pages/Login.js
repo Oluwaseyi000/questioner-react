@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { LoginAction } from '../state/actions/authActions';
 
-import '../css/main.css';
 import '../css/login.css';
 import '../css/new.css';
 import '../css/user/new2.css';
@@ -26,6 +25,13 @@ class Login extends Component {
   inputChangeHandler = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
+    });
+  };
+
+  resetHandler = () => {
+    this.setState({
+      email: '',
+      password: '',
     });
   };
 
@@ -77,8 +83,12 @@ class Login extends Component {
                 <button type="submit" className="submitButton">
                   LOG IN
                 </button>
-                <button type="button" className="cancelButton">
-                  RESET{' '}
+                <button
+                  type="button"
+                  onClick={this.resetHandler}
+                  className="cancelButton"
+                >
+                  RESET
                 </button>
                 <h6 className="already-a-member">
                   New to Questioner?
