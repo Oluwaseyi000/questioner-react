@@ -2,6 +2,7 @@ import {
   SIGN_IN,
   SIGN_IN_SUCCESS,
   SIGN_IN_FAILURE,
+  SIGN_UP,
 } from '../actions/actionTypes';
 
 const initialState = {
@@ -17,6 +18,11 @@ export default (state = initialState, action) => {
         items: action.payload,
       };
     case SIGN_IN_SUCCESS:
+      return {
+        ...state,
+        auth: action.payload,
+      };
+    case SIGN_UP:
       return {
         ...state,
         auth: action.payload,
