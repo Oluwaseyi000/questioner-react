@@ -39,4 +39,12 @@ module.exports = {
       filename: './index.html',
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+    // contentBase: path.resolve(__dirname, './public'),
+    compress: true,
+    port: 9001,
+    watchContentBase: true,
+    progress: true,
+  },
 };
