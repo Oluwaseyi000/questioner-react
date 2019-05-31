@@ -4,6 +4,7 @@
   "description": "Questioner application with react js",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "start-dev": "webpack-dev-server --open --hot --mode development",
     "build": "webpack --mode production",
     "test": "jest",
@@ -57,6 +58,7 @@
   "dependencies": {
     "@babel/runtime": "^7.4.5",
     "axios": "^0.18.0",
+    "express": "^4.17.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
