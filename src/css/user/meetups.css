@@ -38,6 +38,19 @@ table {
   padding-left: 3px;
 }
 
+.section-content {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  margin: 0 3%;
+}
+.section-content .single-meetup {
+  width: 49% !important;
+}
+.section-content .single-meetup .list-image {
+  min-width: 300px !important;
+  max-width: 300px !important;
+}
 .single-meetup {
   background-color: #fff;
   display: flex;
