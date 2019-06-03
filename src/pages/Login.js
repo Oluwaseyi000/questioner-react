@@ -46,7 +46,7 @@ class Login extends Component {
   render() {
     return (
       <section className="container ">
-        <div className=" margin-40 body-wrapper ">
+        <div className=" margin80 body-wrapper ">
           <div className="login-div">
             <div className="topic-list-header center">USER LOGIN </div>
 
@@ -78,21 +78,23 @@ class Login extends Component {
                   onChange={this.inputChangeHandler}
                 />
               </div>
+              <div className="authBtn">
+                <div className="form-group">
+                  <button type="submit" className="submitButton">
+                    LOG IN
+                  </button>
+                  <button
+                    type="button"
+                    onClick={this.resetHandler}
+                    className="cancelButton"
+                  >
+                    RESET
+                  </button>
+                </div>
 
-              <div className="form-group">
-                <button type="submit" className="submitButton">
-                  LOG IN
-                </button>
-                <button
-                  type="button"
-                  onClick={this.resetHandler}
-                  className="cancelButton"
-                >
-                  RESET
-                </button>
                 <h6 className="already-a-member">
                   New to Questioner?
-                  <Link to="/signup">SIGN UP</Link>
+                  <Link to="/signup"> SIGN UP</Link>
                 </h6>
               </div>
             </form>

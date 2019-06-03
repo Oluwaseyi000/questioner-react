@@ -2,21 +2,19 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { SignupAction } from '../state/actions/authActions';
-import '../css/login.css';
-import '../css/new.css';
-import '../css/main.css';
-import '../css/responsive.css';
+// import '../css/login.css';
+// import '../css/new.css';
+// import '../css/main.css';
+// import '../css/responsive.css';
 
 class Signup extends Component {
   state = {
     firstname: '',
     lastname: '',
-    othername: '',
     username: '',
     email: '',
     password: '',
     confirmPassword: '',
-    phoneNumber: '',
     error: '',
   };
 
@@ -81,27 +79,6 @@ class Signup extends Component {
                   onChange={this.inputChangeHandler}
                 />
               </div>
-              <div className="form-group">
-                <label htmlFor="othername">Othername</label>
-                <input
-                  type="text"
-                  name="othername"
-                  className="form-control"
-                  value={this.state.othername}
-                  onChange={this.inputChangeHandler}
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="username">Username </label>
-                <input
-                  type="text"
-                  name="username"
-                  className="form-control"
-                  value={this.state.username}
-                  onChange={this.inputChangeHandler}
-                />
-              </div>
 
               <div className="form-group">
                 <label htmlFor="email">
@@ -143,16 +120,6 @@ class Signup extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="phone">Phone Number</label>
-                <input
-                  type="text"
-                  name="phoneNumber"
-                  className="form-control"
-                  value={this.state.phoneNumber}
-                  onChange={this.inputChangeHandler}
-                />
-              </div>
-              <div className="form-group">
                 <div className="form-group">
                   <ul className="terms-div" id="terms-div">
                     <li>Do not use any vulgar or inapproriate language </li>
@@ -161,17 +128,17 @@ class Signup extends Component {
                       your question has not been asked by another user
                     </li>
                   </ul>
-                  <p className="center">
-                    Field mark with <span>*</span> are required
-                  </p>
                 </div>
-                <button type="submit" name="signup" className="submitButton">
-                  SIGNUP{' '}
-                </button>
-                <button type="button" className="cancelButton">
-                  CANCEL{' '}
-                </button>
-                <h6 className="already-a-member  already-a-member2">
+                <div className="authBtn">
+                  <button type="submit" name="signup" className="submitButton">
+                    SIGNUP{' '}
+                  </button>
+                  <button type="button" className="cancelButton">
+                    CANCEL{' '}
+                  </button>
+                </div>
+
+                <h6 className="center already-a-member">
                   Already a member? <Link to="/login">SIGN IN</Link>
                 </h6>
               </div>
