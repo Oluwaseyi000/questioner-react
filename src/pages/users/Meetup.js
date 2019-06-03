@@ -29,6 +29,7 @@ class Meetup extends Component {
       qcount,
       rsvpcount,
       details,
+      coverimage,
     } = this.state.meetup;
 
     return (
@@ -45,10 +46,7 @@ class Meetup extends Component {
                   <div id="single-meetup-detail">
                     <div className="meetup-banner">
                       {' '}
-                      <img
-                        src="https://images.pexels.com/photos/61129/pexels-photo-61129.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
-                        alt=""
-                      />
+                      <img src={coverimage} alt="" />
                     </div>
                     <div className="meetup-detail">
                       <div>
