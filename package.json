@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "start-dev": "webpack-dev-server --open --hot --mode development",
     "test": "jest",
-    "test:coveralls": "jest -u | coveralls",
+    "test-cover": "jest -u | coveralls",
     "test:dev": "jest --watchAll -u",
-    "build": "webpack --mode production",
     "coverage": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
+    "start-dev": "webpack-dev-server --open --hot --mode development",
+    "build": "webpack --mode production",
     "precommit": "NODE_ENV=production lint-staged",
     "lint": "./node_modules/.bin/eslint ./src/",
     "lint-fix": "./node_modules/.bin/eslint ./src --fix"

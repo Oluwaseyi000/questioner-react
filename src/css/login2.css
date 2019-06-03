@@ -63,10 +63,10 @@ body {
   background-size: cover;
 }
 
-.already-a-member {
+/* .already-a-member {
   text-align: center;
   padding-top: 5px;
-}
+} */
 .info-container:before {
   position: fixed;
   content: '';
