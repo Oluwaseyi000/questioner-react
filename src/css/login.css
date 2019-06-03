@@ -33,7 +33,7 @@ label span {
   color: rgb(214, 51, 51);
 }
 .footer {
-  position: fixed;
+  /* position: fixed; */
   left: 0;
   bottom: 0;
 }
