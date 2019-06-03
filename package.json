@@ -8,7 +8,7 @@
     "test": "jest",
     "test-cover": "jest -u | coveralls NODE_ENV=test ",
     "test:dev": "jest --watchAll -u",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "jest | coveralls",
     "coverage": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "start-dev": "webpack-dev-server --open --hot --mode development",
     "build": "webpack --mode production",
