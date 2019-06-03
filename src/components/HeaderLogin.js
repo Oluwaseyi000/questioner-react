@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HeaderLogin = () => {
   return (
     <header className="header">
       <h1 className="header-logo">
-        <a href="../index.html">
+        <Link to="/">
           <span className="q">Q</span>
           <span className="uestioner">UESTIONER</span>
-        </a>{' '}
+        </Link>
       </h1>
 
       <div className="profile">
