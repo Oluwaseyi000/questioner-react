@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { LoginAction } from '../state/actions/authActions';
+import Header from '../components/Header';
 
 import '../css/login.css';
 import '../css/new.css';
@@ -45,62 +46,66 @@ class Login extends Component {
 
   render() {
     return (
-      <section className="container ">
-        <div className=" margin80 body-wrapper ">
-          <div className="login-div">
-            <div className="topic-list-header center">USER LOGIN </div>
+      <div>
+        <Header />
 
-            <form onSubmit={this.submitHandler} className="signupForm">
-              <p className="errorDiv center">{this.state.signinError}</p>
+        <section className="container ">
+          <div className=" margin80 body-wrapper ">
+            <div className="login-div">
+              <div className="topic-list-header center">USER LOGIN </div>
 
-              <div className="forssm-group">
-                <label htmlFor="email">
-                  Email <span>*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="form-control"
-                  value={this.state.email}
-                  onChange={this.inputChangeHandler}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">
-                  Password <span>*</span>
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  className="form-control"
-                  value={this.state.password}
-                  onChange={this.inputChangeHandler}
-                />
-              </div>
-              <div className="authBtn">
-                <div className="form-group">
-                  <button type="submit" className="submitButton">
-                    LOG IN
-                  </button>
-                  <button
-                    type="button"
-                    onClick={this.resetHandler}
-                    className="cancelButton"
-                  >
-                    RESET
-                  </button>
+              <form onSubmit={this.submitHandler} className="signupForm">
+                <p className="errorDiv center">{this.state.signinError}</p>
+
+                <div className="forssm-group">
+                  <label htmlFor="email">
+                    Email <span>*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="form-control"
+                    value={this.state.email}
+                    onChange={this.inputChangeHandler}
+                  />
                 </div>
+                <div className="form-group">
+                  <label htmlFor="password">
+                    Password <span>*</span>
+                  </label>
+                  <input
+                    type="password"
+                    name="password"
+                    className="form-control"
+                    value={this.state.password}
+                    onChange={this.inputChangeHandler}
+                  />
+                </div>
+                <div className="authBtn">
+                  <div className="form-group">
+                    <button type="submit" className="submitButton">
+                      LOG IN
+                    </button>
+                    <button
+                      type="button"
+                      onClick={this.resetHandler}
+                      className="cancelButton"
+                    >
+                      RESET
+                    </button>
+                  </div>
 
-                <h6 className="already-a-member">
-                  New to Questioner?
-                  <Link to="/signup"> SIGN UP</Link>
-                </h6>
-              </div>
-            </form>
+                  <h6 className="already-a-member">
+                    New to Questioner?
+                    <Link to="/signup"> SIGN UP</Link>
+                  </h6>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     );
   }
 }

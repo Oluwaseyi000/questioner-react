@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import '../css/login2.css';
 import '../css/landing_page.css';
 import '../css/new.css';
+import Header from '../components/Header';
 
 class Home extends Component {
   render() {
     return (
       <div>
+        <Header />
         <div className="login-container">
           <div className="info-container">
             <div className="content content-text">
