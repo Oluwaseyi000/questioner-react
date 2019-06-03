@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
+    "test": "jest",
+    "test-cover": "jest -u | coveralls",
+    "test:dev": "jest --watchAll -u",
+    "coverage": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "start-dev": "webpack-dev-server --open --hot --mode development",
     "build": "webpack --mode production",
-    "test": "jest",
     "precommit": "NODE_ENV=production lint-staged",
     "lint": "./node_modules/.bin/eslint ./src/",
     "lint-fix": "./node_modules/.bin/eslint ./src --fix"
@@ -31,6 +34,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.6",
+    "coveralls": "^3.0.3",
     "css-loader": "^2.1.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.2",
