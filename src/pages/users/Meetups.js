@@ -6,6 +6,9 @@ import '../../css/user/meetups.css';
 import Aside from '../../components/Aside';
 import { getMeetups } from '../../state/actions/meetupActions';
 
+const DEFAULT_IMAGE =
+  'https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80';
+
 class Meetups extends Component {
   state = {
     meetups: [],
@@ -38,7 +41,7 @@ class Meetups extends Component {
                   <div className="single-meetup" key={meetup.id}>
                     <div>
                       <img
-                        src={meetup.coverimage}
+                        src={meetup.coverimage || DEFAULT_IMAGE}
                         className="list-image"
                         alt="coverImage"
                       />
