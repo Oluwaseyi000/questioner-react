@@ -65,7 +65,7 @@
   "dependencies": {
     "@babel/runtime": "^7.4.5",
     "@testing-library/react": "^8.0.1",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
